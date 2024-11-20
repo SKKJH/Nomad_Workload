@@ -12,7 +12,7 @@ def plot_page_index_over_time(input_file, output_image):
                 page_index = int(line.strip())
                 timestamps.append(timestamp)
                 page_indices.append(page_index)
-                if (timestamp>10000):
+                if (timestamp>1000):
                     break
     except FileNotFoundError:
         print(f"Error: File not found at {input_file}. Please ensure the file exists.")
@@ -34,6 +34,6 @@ def plot_page_index_over_time(input_file, output_image):
 
 if __name__ == "__main__":
     input_file = "page_index.log"  # 데이터 파일 경로
-    output_image = "zoom_temp_local.png"  # 저장할 이미지 파일 경로
+    output_image = "zoom_temp_local_1000.png"  # 저장할 이미지 파일 경로
     plot_page_index_over_time(input_file, output_image)
 
