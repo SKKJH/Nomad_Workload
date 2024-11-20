@@ -12,7 +12,7 @@ def plot_page_index_over_time(input_file, output_image):
                 page_index = int(line.strip())
                 timestamps.append(timestamp)
                 page_indices.append(page_index)
-                if (len(page_indices)>1000000):
+                if (timestamp>1000000):
                     break
     except FileNotFoundError:
         print(f"Error: File not found at {input_file}. Please ensure the file exists.")
