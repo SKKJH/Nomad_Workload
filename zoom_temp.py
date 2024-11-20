@@ -20,7 +20,7 @@ def plot_page_index_over_time(input_file, output_image):
 
     # 그래프 그리기
     plt.figure(figsize=(12, 6))
-    plt.scatter(timestamps, page_indices, alpha=0.5, s=1, c='blue')  # 점 크기(s)와 투명도(alpha) 조정
+    plt.scatter(timestamps, page_indices, alpha=0.7, s=3, c='blue')  # 점 크기(s)와 투명도(alpha) 조정
     plt.title("Page Index Over Time")
     plt.xlabel("Time (Sequential Order)")
     plt.ylabel("Page Index")
@@ -34,6 +34,6 @@ def plot_page_index_over_time(input_file, output_image):
 
 if __name__ == "__main__":
     input_file = "page_index.log"  # 데이터 파일 경로
-    output_image = "zoom_temp_local_1000.png"  # 저장할 이미지 파일 경로
+    output_image = "zoom_temp_local_1000_thick.png"  # 저장할 이미지 파일 경로
     plot_page_index_over_time(input_file, output_image)
 
