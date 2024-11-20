@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def plot_page_access_counts(input_file):
-    output_image = "zoom_pg_idx_100.png"
+    output_image = "zoom_pg_idx.png"
     page_indices = []
     access_counts = []
 
@@ -22,7 +22,7 @@ def plot_page_access_counts(input_file):
 
     # 그래프 그리기
     plt.figure(figsize=(12, 6))
-    plt.plot(page_indices, access_counts, marker='o',markersize=1, linestyle='-', linewidth=1)
+    plt.plot(page_indices, access_counts, marker='o',markersize=3, linestyle='-', linewidth=1)
     plt.title("Page Index vs Access Count")
     plt.xlabel("Page Index")
     plt.ylabel("Access Count")
