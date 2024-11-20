@@ -8,11 +8,14 @@ def plot_page_access_counts(input_file):
     try:
         # 파일에서 데이터 읽기
         with open(input_file, "r") as file:
+            i = 0
             for line in file:
                 page, count = map(int, line.strip().split())
-                if (count > 10):
-                    page_indices.append(page)
-                    access_counts.append(count)
+                page_indices.append(page)
+                access_counts.append(count)
+                i += 1
+                if (i > 1000):
+                    break
     except FileNotFoundError:
         print(f"Error: File not found at {input_file}. Please ensure the file exists.")
         return
