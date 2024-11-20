@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def plot_page_access_counts(input_file):
-    output_image = "pg_idx_acc_cnt.png"
+    output_image = "zoom_pg_idx_acc_cnt.png"
     page_indices = []
     access_counts = []
 
@@ -10,8 +10,9 @@ def plot_page_access_counts(input_file):
         with open(input_file, "r") as file:
             for line in file:
                 page, count = map(int, line.strip().split())
-                page_indices.append(page)
-                access_counts.append(count)
+                if (count > 10):
+                    page_indices.append(page)
+                    access_counts.append(count)
     except FileNotFoundError:
         print(f"Error: File not found at {input_file}. Please ensure the file exists.")
         return
